@@ -30,7 +30,7 @@ while True:
 		break
 	except:
 		pass
-time.sleep(3)
+#time.sleep(3)
 submit_button = browser.find_element_by_xpath("//*[contains(text(), '提交')]")
 submit_button.click()
 while True:
@@ -40,7 +40,7 @@ while True:
 		break
 	except:
 		pass
-time.sleep(3)
+time.sleep(1)
 while True:
 	try:
 		ok_button = browser.find_element_by_css_selector(".dialog_button.default.fr")
