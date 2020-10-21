@@ -5,15 +5,25 @@ from selenium.webdriver.common.by import By
 
 settings_file = open("settings.txt", "r+")
 
-browser = webdriver.Chrome()
+browser = webdriver.Firefox()
 browser.maximize_window()
 browser.get('https://yqtb.hust.edu.cn/infoplus/form/BKS/start')
 username = browser.find_element_by_name("un")
 username.send_keys(settings_file.readline())
 password = browser.find_element_by_name("pd")
-password.send_keys(settings_file.readline())
+#password.send_keys(settings_file.readline())
+password.send_keys("Hxp66513138/")
 settings_file.close()
-password.send_keys(Keys.TAB)
+#password.send_keys(Keys.TAB)
+
+while True:
+	try:
+		option_button = browser.find_element_by_name("fieldHidden1")
+		option_button.click()
+		break
+	except:
+		pass
+
 while True:
 	try:
 		next_step_button = browser.find_element_by_class_name("command_button_content")
@@ -21,6 +31,15 @@ while True:
 		break
 	except:
 		pass
+		
+while True:
+	try:
+		next_step_button = browser.find_element_by_class_name("command_button_content")
+		next_step_button.click()
+		break
+	except:
+		pass
+
 while True:
 	try:
 		temp_student = browser.find_element_by_name("fieldXSZLB")
